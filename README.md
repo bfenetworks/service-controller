@@ -137,8 +137,8 @@ GO111MODULE=on GOPROXY=https://goproxy.cn,direct go mod download
 - Kubernetes cluster name: `szyf`
 - image has been set properly. Please refer to [service-controller image](https://github.com/bfenetworks/service-controller/pkgs/container/service-controller)
 
-#### Setup fot examples/whoami_alb.yaml
-- Product line `demo` has already been created in the API Server.
+#### Setup for examples/whoami_alb.yaml
+- Product `demo` has been created in the API Server.
 
 ### Deploy the Service Controller
 
