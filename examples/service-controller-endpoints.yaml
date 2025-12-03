@@ -64,7 +64,6 @@ spec:
       containers:
         - name: bfe-service-controller
           imagePullPolicy: Always
-          #image: 172.18.1.244:5000/service-controller-open:latest
           image: ghcr.io/bfenetworks/service-controller:x86_64-v1.0.0
           command: [ "/service-controller" ]
           args:
@@ -118,4 +117,3 @@ spec:
           emptyDir: {}
         - name: var-run
           emptyDir: {}
-
