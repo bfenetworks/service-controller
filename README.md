@@ -47,7 +47,7 @@ kubectl get pods
 ## Configuration Guide
 
 ### Controller Configuration  
-Refer to `./examples/service-controller-endpoints.yaml`.
+Refer to [./examples/service-controller-endpoints.yaml](./examples/service-controller-endpoints.yaml).
 
 Notes:
 - Modify the container image source according to your environment.
@@ -62,7 +62,7 @@ Notes:
 - Add the label `bfe-product` to specify the corresponding BFE product line.
 - The `name` field in each port definition must be explicitly set.
 
-See `./examples/whoami_alb.yaml` for reference.
+See [./examples/whoami_alb.yaml](./examples/whoami_alb.yaml) for reference.
 
 Example:
 
@@ -191,4 +191,3 @@ $ kubectl delete -f examples/whoami_alb.yaml
 $ kubectl get configmap whoami.result -n open-bfe-demo -o yaml
 Error from server (NotFound): configmaps "whoami.result" not found
 ```
-
