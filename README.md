@@ -1,5 +1,7 @@
 # service-controller
 
+English | [中文](./README-CN.md)
+
 `service-controller` is a Kubernetes controller designed to enable automatic discovery and configuration of BFE (Beyond Front End) Layer 7 services based on Kubernetes Service resources. The controller continuously monitors changes to Service resources in the cluster and automatically registers eligible services into BFE configurations, enabling seamless traffic integration and management.
 
 ## Features
