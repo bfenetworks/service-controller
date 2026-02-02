@@ -116,11 +116,13 @@ Key operations are recorded in two locations:
 
 ```bash
 # Build binary
-sh build/build.sh
+make build
 
 # Build Docker image (for current architecture)
-sh docker-build.sh release
+make docker
 
+# Push Docker image (multi-platform: linux/amd64 & linux/arm64)
+make docker-push REGISTRY=ghcr.io/your-org
 ```
 Note:
 - It may need to set GOPROXY to build. eg:
@@ -135,12 +137,13 @@ GO111MODULE=on GOPROXY=https://goproxy.cn,direct go mod download
 #### Setup examples/service-controller-endpoints.yaml
 - API Server URL: `http://172.18.1.244:8183`
 - Token: `Token xCFZgmV02dzD3lWTlRvN'`
+  - Create the token in the Control Plane [dashboard](https://github.com/bfenetworks/dashboard/blob/develop/README.md) beforehand.
 - Monitored namespace: `open-bfe-demo`
 - Kubernetes cluster name: `szyf`
 - image has been set properly. Please refer to [service-controller image](https://github.com/bfenetworks/service-controller/pkgs/container/service-controller)
 
 #### Setup for examples/whoami_alb.yaml
-- Product `demo` has been created in the API Server.
+- Product `demo` has been created in the Control Plane [dashboard](https://github.com/bfenetworks/dashboard/blob/develop/README.md) .
 
 ### Deploy the Service Controller
 

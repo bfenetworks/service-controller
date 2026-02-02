@@ -114,11 +114,13 @@ spec:
 ### 构建命令
 ```bash
 # 构建二进制
-sh build/build.sh
+make build
 
 # 构建 Docker 镜像 (当前架构)
-sh docker-build.sh release
+make docker
 
+# 推送 docker 镜像（跨平台：linux/amd64 & linux/arm64）
+make docker-push REGISTRY=ghcr.io/your-org
 ```
 
 注意:
@@ -135,6 +137,7 @@ GO111MODULE=on GOPROXY=https://goproxy.cn,direct go mod download
 #### 配置 examples/service-controller-endpoints.yaml
 - 服务地址: `http://172.18.1.244:8183`
 - Token为: `Token xCFZgmV02dzD3lWTlRvN'`
+  - 需要预先在控制面[dashboard](https://github.com/bfenetworks/dashboard/blob/develop/README.md)上创建`token`
 - 监听的k8s namespace: `open-bfe-demo`
 - k8s的集群名为: `szyf`
 - 镜像地址. 请参考 [service-controller image](https://github.com/bfenetworks/service-controller/pkgs/container/service-controller)
@@ -143,7 +146,7 @@ GO111MODULE=on GOPROXY=https://goproxy.cn,direct go mod download
 - 请根据您的实际环境，修改上述配置的值。
 
 ### 配置 examples/whoami_alb.yaml
-- 已经在api server上创建好产品线  `demo`
+- 已经在控制面[dashboard](https://github.com/bfenetworks/dashboard/blob/develop/README.md)上创建好产品线  `demo`
 
 ### 部署service controller
 
